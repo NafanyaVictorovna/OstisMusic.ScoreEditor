@@ -15,8 +15,8 @@
                     </li>
                 </ul>
             </li>
-            <li ng-class="{disabled: !playerReady}"><a href="#" class="stop"><span class="glyphicon glyphicon-stop"></span> Stop</a></li>
-            <li ng-class="{disabled: !playerReady}"><a href="#" class="play"><span class="glyphicon glyphicon-play"></span> Play</a></li>
+            <li ng-class="{disabled: !playerReady}" ng-click="stop()"><a href="#" class="stop"><span class="glyphicon glyphicon-stop"></span> Stop</a></li>
+            <li ng-class="{disabled: !playerReady}" ng-click="play()"><a href="#" class="play"><span class="glyphicon glyphicon-play"></span> Play</a></li>
         </ul>
 
     </div>
