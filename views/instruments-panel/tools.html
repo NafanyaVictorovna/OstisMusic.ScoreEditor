@@ -1,3 +1,5 @@
+<script src="scripts/controller/Ctrl.js">
+</script>
 <tabset justified="true">
     <tab heading="Tools">
         <div class="instruments panel panel-default">
@@ -28,40 +30,16 @@
                     <button class="accidental-flat item btn btn-default">b</button>
                 </div>
             </div>
-<!--
--->
-			<script src="/scripts/info.js"></script>						
 			
-			<div class="instrument" >
-			Information about instruments: <br>
-			<FORM name="myForm">
-				<select id="mySelectId" name="mySelect">					
-					<option value="str1"> Acoustic Grand Piano </option>
-					<option value="str2"> Sitar </option>
-					<option value="str3"> Banjo </option>
-					<option value="str4"> Shamisen </option>
-					<option value="str5"> Kalimba </option>
-					<option value="str6"> Fiddle </option>
-					<option value="str7"> Agogo </option>
-					<option value="str8"> Woodblock </option>
-					<option value="str9"> Marimba </option>
-					<option value="str10"> Accordion </option>
-					<option value="str11"> Harmonica </option>
-				</select>
-			</FORM>									
-
-			         <input type="button" onclick="count_rabbits()" value="Ok"}>
+			<div class="instrument" >   
+            <input type="button" onclick="count_rabbits()" value=information:{{activeTrack.instrument.instrument}}>
             </div>
-<!--
--->
-
+			
             <div class="instrument" >
                 Instrument:<br>
-
                 <select class="form-control" ng-model="activeTrack.instrument"
                         ng-options="instr.instrument for (index, instr) in editor.getAllInstruments()"></select>
             </div>
-
             <div class="row instrument">
                 <div class="col-md-6" >
                     Tempo:<br>
@@ -72,6 +50,16 @@
                     <input style="width: 100px" type="number" class="form-control" ng-model="activeTrack.options.octaveShift"/>
                 </div>
             </div>
+			<div class="instrument" >
+				<button id="buttonInstrument" data-toggle="modal" data-target="#keyboardModal" class="btn btn-default" onclick="Ctrl()" value="{{activeTrack.instrument.instrument}}">{{activeTrack.instrument.instrument}}</button>
+			</div>
+			<div class="modal fade" id="keyboardModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" style="width: 785px">
+					<div  class="modal-content">
+					<ng-include src="'views/keyboard.html'"></ng-include>
+					</div>
+				</div> 
+			</div>
         </div>
     </tab>
 </tabset>
