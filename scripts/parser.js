@@ -28,11 +28,7 @@ define(['scripts/model/all'], function(Model){
                 }
             }
             if(staveTickables != []){
-/*<<<<<<< HEAD*/
                 result += makeStave(staveTickables, options.width * ((staveTickables.length+6)/(options.notesPerLine+1)));
-/*=======
-                result += makeStave(staveTickables, options.width * ((staveTickables.length+1)/(options.notesPerLine+1)));
->>>>>>> b620c5bfbc008f05f131230419f2e85416399467*/
             }
             return result;
         };
